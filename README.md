@@ -1,4 +1,4 @@
-<img src="https://tas2580.net/downloads/image-9.png" width="600" height="80" alt="phpBB-3.1-Failed-logins" />
+<img src="https://tas2580.net/downloads/phpbb-extension-list/image.png" width="600" height="80" alt="phpBB-3.1-Extension List" />
 
 This is an extension for the phpBB forums software. You need an instalation of phpBB 3.1.x to use this.
 
@@ -16,7 +16,7 @@ SUPPORT
 -------
 You can get support for this extension on <a href="https://www.phpbb.com/community/viewtopic.php?f=456&t=2285906">phpbb.com</a>
 or in german on <a href="https://www.phpbb.de/community/viewtopic.php?f=149&t=233246">phpbb.de</a>. For more informations look at
-<a href="https://tas2580.net/downloads/download-9.html">my Website</a>.
+<a href="https://tas2580.net/downloads/phpbb-extension-list/">my Website</a>.
 
 Help to translate
 -----------------
