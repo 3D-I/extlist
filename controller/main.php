@@ -43,16 +43,15 @@ class main
 	{
 		$this->user->add_lang_ext('tas2580/extlist', 'common');
 
-
 		foreach ($this->phpbb_extension_manager->all_enabled() as $name => $location)
 		{
 			$md_manager = $this->phpbb_extension_manager->create_extension_metadata_manager($name, $this->template);
 			$meta = $md_manager->get_metadata('all');
 
 			$authors_list = array();
-			foreach($meta['authors'] as $author)
+			foreach ($meta['authors'] as $author)
 			{
-				$authors_list [] = empty($author['homepage']) ? $author['name'] : '<a href="' . $author['homepage'] . '">' . $author['name']  . '</a>';
+				$authors_list[] = empty($author['homepage']) ? $author['name'] : '<a href="' . $author['homepage'] . '">' . $author['name']  . '</a>';
 			}
 
 			$this->template->assign_block_vars('extension_list', array(
@@ -62,14 +61,6 @@ class main
 				'AUTHORS'		=> implode(', ', $authors_list),
 			));
 		}
-
-
-
-		$this->template->assign_vars(array(
-			'PAYPAL_DESCRIPTION'		=> 'sssssssss',
-
-		));
 		return $this->helper->render('extlist_body.html', $this->user->lang['EXTLIST']);
 	}
-
 }
