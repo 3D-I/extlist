@@ -34,4 +34,8 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'EXTLIST'			=> 'Extensions',
 	'EXTLIST_INFO'		=> 'Installierete Extensions',
+	'NAME'			=> 'Name',
+	'DESCRIPTION'		=> 'Beschreibung',
+	'VERSION'			=> 'Version',
+	'AUTHORS'		=> 'Autoren',
 ));
