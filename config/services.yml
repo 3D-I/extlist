@@ -1,0 +1,17 @@
+services:
+    tas2580.extlist.main:
+        class: tas2580\extlist\controller\main
+        arguments:
+            - @config
+            - @controller.helper
+            - @template
+            - @user
+            - @ext.manager
+    tas2580.extlist.listener:
+        class: tas2580\extlist\event\listener
+        arguments:
+            - @controller.helper
+            - @template
+            - @user
+        tags:
+            - { name: event.listener }

@@ -1,0 +1,31 @@
+<!-- INCLUDE overall_header.html -->
+
+<h2>{L_EXTLIST_INFO}</h2>
+
+<div class="forumbg forumbg-table">
+	<div class="inner">
+		<table class="table1">
+		<thead>
+			<tr>
+				<th>{L_NAME}</th>
+				<th>{L_DESCRIPTION}</th>
+				<th>{L_VERSION}</th>
+				<th>{L_AUTHORS}</th>
+			</tr>
+		</thead>
+		<tbody>
+		<!-- BEGIN extension_list -->
+		<tr class="<!-- IF extension_list.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+			<td><strong>{extension_list.NAME}</strong></td>
+			<td>{extension_list.DESCRIPTION}</td>
+			<td>{extension_list.VERSION}</td>
+			<td>{extension_list.AUTHORS}</td>
+
+		</tr>
+		<!-- END extension_list -->
+		</tbody>
+		</table>
+	</div>
+</div>
+
+<!-- INCLUDE overall_footer.html -->
