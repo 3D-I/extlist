@@ -50,7 +50,6 @@ class listener implements EventSubscriberInterface
 		$this->user = $user;
 	}
 
-
 	public function page_header($event)
 	{
 		$this->user->add_lang_ext('tas2580/extlist', 'common');

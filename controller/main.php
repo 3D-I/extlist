@@ -18,6 +18,7 @@ class main
 	protected $template;
 	/* @var \phpbb\user */
 	protected $user;
+
 	/**
 	* Constructor
 	*
@@ -34,6 +35,7 @@ class main
 		$this->user = $user;
 		$this->phpbb_extension_manager = $phpbb_extension_manager;
 	}
+
 	/**
 	* Controller for route /paypal
 	*
