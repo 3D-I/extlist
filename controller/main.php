@@ -48,7 +48,7 @@ class main
 	public function handle()
 	{
 		// check auth
-		if(!$this->auth->acl_get('u_extlist_view'))
+		if (!$this->auth->acl_get('u_extlist_view'))
 		{
 			trigger_error('NOT_AUTHORISED');
 		}

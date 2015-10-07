@@ -73,7 +73,7 @@ class listener implements EventSubscriberInterface
 
 	public function page_header($event)
 	{
-		if($this->auth->acl_get('u_extlist_view'))
+		if ($this->auth->acl_get('u_extlist_view'))
 		{
 			$this->user->add_lang_ext('tas2580/extlist', 'common');
 			$this->template->assign_vars(array(
