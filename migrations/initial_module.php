@@ -12,6 +12,10 @@ namespace tas2580\extlist\migrations;
 
 class initial_module extends \phpbb\db\migration\migration
 {
-
-
+	public function update_data()
+	{
+		return array(
+			array('permission.add', array('u_extlist_view', true, 'u_viewprofile')),
+		);
+	}
 }

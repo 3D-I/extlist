@@ -22,13 +22,15 @@ class main
 	/**
 	* Constructor
 	*
+	* @param \phpbb\auth\auth			$auth		Auth object
 	* @param \phpbb\config\config		$config
-	* @param \phpbb\controller\helper	$helper
+	* @param \phpbb\controller\helper		$helper
 	* @param \phpbb\template\template	$template
 	* @param \phpbb\user				$user
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user, \phpbb\extension\manager $phpbb_extension_manager)
+	public function __construct(\phpbb\auth\auth $auth, \phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user, \phpbb\extension\manager $phpbb_extension_manager)
 	{
+		$this->auth = $auth;
 		$this->config = $config;
 		$this->helper = $helper;
 		$this->template = $template;
@@ -43,6 +45,12 @@ class main
 	*/
 	public function handle()
 	{
+		// check auth
+		if(!$this->auth->acl_get('u_extlist_view'))
+		{
+			trigger_error('NOT_AUTHORISED');
+		}
+
 		$this->user->add_lang_ext('tas2580/extlist', 'common');
 
 		foreach ($this->phpbb_extension_manager->all_enabled() as $name => $location)

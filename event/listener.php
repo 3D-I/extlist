@@ -24,6 +24,7 @@ class listener implements EventSubscriberInterface
 	{
 		return array(
 			'core.page_header'						=> 'page_header',
+			'core.permissions'						=> 'permissions',
 		);
 	}
 
@@ -39,22 +40,42 @@ class listener implements EventSubscriberInterface
 	/**
 	* Constructor
 	*
+	* @param \phpbb\auth\auth			$auth		Auth object
 	* @param \phpbb\controller\helper		$helper		Controller helper object
 	* @param \phpbb\template			$template		Template object
 	* @param \phpbb\user				$user		User object
 	*/
-	public function __construct(\phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user)
+	public function __construct(\phpbb\auth\auth $auth, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user)
 	{
+		$this->auth = $auth;
 		$this->helper = $helper;
 		$this->template = $template;
 		$this->user = $user;
 	}
 
+	/*
+	 * Add permissions
+	 */
+	public function permissions($event)
+	{
+		$permissions = $event['permissions'];
+		$permissions += array(
+			'u_extlist_view'		=> array(
+				'lang'		=> 'ACL_U_EXTLIST_VIEW',
+				'cat'		=> 'misc'
+			),
+		);
+		$event['permissions'] = $permissions;
+	}
+
 	public function page_header($event)
 	{
-		$this->user->add_lang_ext('tas2580/extlist', 'common');
-		$this->template->assign_vars(array(
-			'U_EXTLIST'	=> $this->helper->route('tas2580_extlist_controller', array()),
-		));
+		if($this->auth->acl_get('u_extlist_view'))
+		{
+			$this->user->add_lang_ext('tas2580/extlist', 'common');
+			$this->template->assign_vars(array(
+				'U_EXTLIST'	=> $this->helper->route('tas2580_extlist_controller', array()),
+			));
+		}
 	}
 }
