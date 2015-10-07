@@ -10,6 +10,8 @@ namespace tas2580\extlist\controller;
 
 class main
 {
+	/* @var \phpbb\auth\auth */
+	protected $auth;
 	/* @var \phpbb\config\config */
 	protected $config;
 	/* @var \phpbb\controller\helper */
@@ -23,10 +25,10 @@ class main
 	* Constructor
 	*
 	* @param \phpbb\auth\auth			$auth		Auth object
-	* @param \phpbb\config\config		$config
-	* @param \phpbb\controller\helper		$helper
-	* @param \phpbb\template\template	$template
-	* @param \phpbb\user				$user
+	* @param \phpbb\config\config		$config		Config
+	* @param \phpbb\controller\helper		$helper		Controller helper object
+	* @param \phpbb\template\template	$template		Template object
+	* @param \phpbb\user				$user		User object
 	*/
 	public function __construct(\phpbb\auth\auth $auth, \phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user, \phpbb\extension\manager $phpbb_extension_manager)
 	{
