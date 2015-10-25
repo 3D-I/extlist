@@ -4,11 +4,12 @@
 	"description": "Add a new page that display all installed extensions to the user.",
 	"homepage": "https://tas2580.net/downloads/phpbb-extension-list/",
 	"version": "0.1.2",
-	"keywords": ["phpbb", "extension"],
+	"keywords": ["phpbb", "extension", "list"],
 	"license": "GPL-2.0",
 	"authors": [
 		{
 			"name": "tas2580",
+			"email": "mail@tas2580.net",
 			"homepage": "https://tas2580.net",
 			"role": "Developer"
 		}
